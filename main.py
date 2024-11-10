@@ -175,7 +175,7 @@ questions = [
 ]
 responses = []
 
-genai.configure(api_key="AIzaSyA8zb5MDHyg8fRQYsfuPyvLkad5Lwi3ksc")
+genai.configure(api_key=os.getenv("API_KEY"))
 
 # Create the model
 generation_config = {
