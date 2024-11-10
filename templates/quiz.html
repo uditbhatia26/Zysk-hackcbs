@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Questionnaire</title>
+    <style>
+        /* Body and Background */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #c8e8f8, #b0d4f1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #004d40;
+            animation: backgroundFade 10s infinite alternate;
+        }
+
+        /* Background Fade Animation */
+        @keyframes backgroundFade {
+            0% { background: linear-gradient(135deg, #c8e8f8, #b0d4f1); }
+            100% { background: linear-gradient(135deg, #b0d4f1, #8ec0e4); }
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Header Styling */
+        h1 {
+            color: #00695c;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+
+        /* Question and Dropdown Styling */
+        .question {
+            font-weight: 600;
+            color: #004d40;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            transition: color 0.2s ease;
+        }
+
+        .dropdown {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #b2dfdb;
+            border-radius: 8px;
+            background-color: #f5fafd;
+            color: #004d40;
+            font-size: 1em;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            outline: none;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dropdown:hover {
+            background-color: #e0f7fa;
+        }
+
+        /* Dropdown Arrow Customization */
+        .dropdown::after {
+            content: '▼';
+            font-size: 0.8em;
+            color: #004d40;
+            position: absolute;
+            right: 12px;
+            pointer-events: none;
+        }
+
+        /* Submit Button Styling */
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #00796b;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #004d40;
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Financial Questionnaire</h1>
+        
+        <!-- Form sends data to Flask directly via POST request -->
+        <form action="/submit" method="POST">
+            {% for i in range(questions|length) %}
+                <div class="question">{{ i + 1 }}. {{ questions[i]['Question'] }}</div>
+                <select name="responses" class="dropdown" required>
+                    <option value="" disabled selected>Select an option</option>
+                    {% for option in questions[i]['Options'] %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+            {% endfor %}
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
