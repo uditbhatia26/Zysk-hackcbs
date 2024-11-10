@@ -238,6 +238,3 @@ def submit():
         gpt_response = chat_session.send_message(f"The user’s financial goal is {responses[0]} with an investment horizon of {responses[1]}. They earn {responses[2]} per month, they are {responses[3]}, and have to {responses[4]}. The user currently has a debt of {responses[5]} and has emergency funds to cover {responses[6]}. The user's risk taking ability is {responses[7]} and the user is comfortable with {responses[8]}. The user reviews his/her investments {responses[9]}. The user is willing to invest {responses[10]} of his earnings. The user has a {responses[11]} of financial markets and he does {responses[12]} uses a financial advisor. The user has a retirement savings plan as well. Generate a personalized financial report for the user")
         recommended_stocks = get_stocks(responses[7]) 
     return render_template('analysis.html', model_response=markdown.markdown(gpt_response.text), recommended_stocks=recommended_stocks)
-
-if __name__ == '__main__':
-    app.run(debug=True)
