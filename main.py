@@ -230,11 +230,15 @@ def quiz():
 def submit():
     # Collect responses from form data
     responses = request.form.getlist('responses')
-    # Redirect to the analysis page    ith the responses
-    if responses[-1] == 'No':
-
-        gpt_response = chat_session.send_message(f"The user’s financial goal is {responses[0]} with an investment horizon of {responses[1]}. They earn {responses[2]} per month, they are {responses[3]}, and have to {responses[4]}. The user currently has a debt of {responses[5]} and has emergency funds to cover {responses[6]}. The user's risk taking ability is {responses[7]} and the user is comfortable with {responses[8]}. The user reviews his/her investments {responses[9]}. The user is willing to invest {responses[10]} of his earnings. The user has a {responses[11]} of financial markets and he does {responses[12]} uses a financial advisor. The user does not has a retirement savings plan. Generate a personalized financial report for the user")
-    else:
-        gpt_response = chat_session.send_message(f"The user’s financial goal is {responses[0]} with an investment horizon of {responses[1]}. They earn {responses[2]} per month, they are {responses[3]}, and have to {responses[4]}. The user currently has a debt of {responses[5]} and has emergency funds to cover {responses[6]}. The user's risk taking ability is {responses[7]} and the user is comfortable with {responses[8]}. The user reviews his/her investments {responses[9]}. The user is willing to invest {responses[10]} of his earnings. The user has a {responses[11]} of financial markets and he does {responses[12]} uses a financial advisor. The user has a retirement savings plan as well. Generate a personalized financial report for the user")
-        recommended_stocks = get_stocks(responses[7]) 
+    user_profile = f"""
+    The user’s financial goal is {responses[0]} with an investment horizon of {responses[1]}.
+    They earn {responses[2]} per month, save {responses[9]}, and have debt of {responses[5]}.
+    Their current financial situation is: {responses[3]}.
+    The user has emergency funds to cover {responses[6]} months of expenses.
+    The user's risk tolerance is {responses[7]} and they prefer to invest in {responses[8]}.
+    They review investments {responses[10]}, and they are willing to invest {responses[11]} of their income.
+    They rate their financial knowledge as {responses[12]} and do not currently work with a financial advisor, {responses[13]} credit cards, and {responses[14]} a retirement savings plan.
+    """
+    gpt_response = chat_session.send_message(user_profile)
+    recommended_stocks = get_stocks(responses[7]) 
     return render_template('analysis.html', model_response=markdown.markdown(gpt_response.text), recommended_stocks=recommended_stocks)
