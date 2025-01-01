@@ -242,3 +242,7 @@ def submit():
     gpt_response = chat_session.send_message(user_profile)
     recommended_stocks = get_stocks(responses[7]) 
     return render_template('analysis.html', model_response=markdown.markdown(gpt_response.text), recommended_stocks=recommended_stocks)
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
