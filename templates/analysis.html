@@ -120,11 +120,6 @@
     <div class="analysis-content" id="content-to-download">
         <!-- Use the safe filter to render the HTML content without escaping it -->
         {{ model_response | safe }}<br>
-        <h2>Here are some of the stock recommendations based on your report</h2>
-        <h3>You can invest in the following stocks:</h3>
-        {% for i in recommended_stocks %}
-            <h3>{{ i }} <br></h3>
-        {% endfor %}
     </div>
 
     <!-- Download Button -->
