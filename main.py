@@ -207,7 +207,6 @@ def submit():
     They rate their financial knowledge as {responses[12]} and do not currently work with a financial advisor, {responses[13]} credit cards, and {responses[14]} a retirement savings plan.
     """
     gpt_response = chat_session.send_message(user_profile)
-    recommended_stocks = get_stocks(responses[7]) 
     return render_template('analysis.html', model_response=markdown.markdown(gpt_response.text))
 
 if __name__ == "__main__":
