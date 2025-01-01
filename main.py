@@ -5,39 +5,6 @@ import google.generativeai as genai
 import requests, random 
 
 app = Flask(__name__)
-largecap = ['Mahindra', 'Titan', 'Tech Mahindra', 'Infosys', 'Nestle India', 'Torrent Pharma', 'IRFC', 'GAIL', 'Tata Power']
-midcap = ['Paytm', 'Indian Hotels Co', 'Ashok Leyland', 'Indraprastha Gas', 'Federal Bank', 'Coal India', 'ABFRL', 'Power Grid Corp']
-smallcap = ['ITI', 'Crompton Greaves', 'HFCL', 'Laurus Labs', 'NALCO', 'IFCI', 'Aarti Industries', 'Aster DM Healthcare']
-
-def get_stocks(text):
-    recommended_stocks = []  # Define as a local variable to reset with each call
-
-    if text == 'Low':
-        for i in range(2):
-            recommended_stocks.append(random.choice(largecap))
-            recommended_stocks.append(random.choice(midcap))
-        for i in range(1):
-            recommended_stocks.append(random.choice(smallcap))
-
-    elif text == 'Moderate':
-        for i in range(2):
-            recommended_stocks.append(random.choice(midcap))
-        for i in range(1):
-            recommended_stocks.append(random.choice(largecap))                
-            recommended_stocks.append(random.choice(smallcap))
-
-    elif text == 'High':
-        for i in range(2):
-            recommended_stocks.append(random.choice(smallcap))
-            recommended_stocks.append(random.choice(midcap))
-        for i in range(1):
-            recommended_stocks.append(random.choice(largecap))
-
-    else:
-        recommended_stocks = ["You can invest in FD's if you are not willing to take risks"]
-
-    recommended_stocks = list(set(recommended_stocks))  # Remove duplicates if any
-    return recommended_stocks
 
 questions = [
     {
@@ -241,7 +208,7 @@ def submit():
     """
     gpt_response = chat_session.send_message(user_profile)
     recommended_stocks = get_stocks(responses[7]) 
-    return render_template('analysis.html', model_response=markdown.markdown(gpt_response.text), recommended_stocks=recommended_stocks)
+    return render_template('analysis.html', model_response=markdown.markdown(gpt_response.text))
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
