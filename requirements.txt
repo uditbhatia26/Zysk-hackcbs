@@ -1,0 +1,5 @@
+Flask
+markdown
+beautifulsoup4
+google-generativeai
+requests

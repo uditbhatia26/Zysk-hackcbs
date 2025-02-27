@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Zysk - Your Personal Financial Advisor</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="../static/img/logo.png" rel="icon">
+  <link href="../static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../static/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="../static/img/logo.png" alt="">
+        <h1 class="sitename"><span>Zysk</span></h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#features">Features</a></li>
+          <!-- <li><a href="#pricing">Pricing</a></li> -->
+          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li> -->
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-5">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <h2>Zysk</h2>
+            <p style="text-align: justify;">Take control of your financial future with our personalized advisory platform. Whether you're a seasoned investor or just starting your financial journey, our platform offers expert insights and tailored strategies to help you make informed decisions. We understand that each financial situation is unique, which is why we customize our recommendations to align with your specific goals, risk tolerance, and financial mindset.<br><br>
+
+              With tools designed to simplify complex concepts and provide clear, actionable steps, we aim to empower you to navigate the ever-changing financial landscape with confidence. Our platform is built to support you at every stage—whether you're looking to grow your wealth, manage risks, or plan for retirement. Let us be your trusted partner in building a secure and prosperous future.</p>
+            <div class="d-flex">
+              <a href="{{ url_for('quiz') }}"  class="btn-get-started" sty>Get Started</a>   
+              
+              <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
+            </div>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="../static/img/hero-img2.png" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+
+    <!-- About Section -->
+    <section id="about" class="about section" style="margin-top: 100px; margin-bottom: 10px;">
+
+      <div class="container">
+
+        <div class="row gy-4">
+          
+          <div class="container section-title" data-aos="fade-up" style="margin-bottom: 0px;">
+            <div><span class="description-title" style="margin-bottom: 0px;">How It Works</span></div>
+          </div>
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <ul>
+              <li>
+                <h4><i class="bi bi-1-circle" style="margin-top: 0px;"></i>Answer a Few Questions</h4>
+                <div style="margin-left: 23px; margin-bottom: 25px; margin-right: 12px; text-align: justify">Get started by answering a set of questions designed to understand your financial mindset. Your answers will help us tailor the advice to your goals and preferences.</div>
+              </li>
+              <li>
+                <h4><i class="bi bi-2-circle"></i>AI-Powered Report</h4>
+                <div style="margin-left: 23px; margin-bottom: 25px; margin-right: 12px; text-align: justify">Based on your responses, our AI model generates a detailed financial report that dives into your financial mindset and suggests strategies for improving your investment approach. Short on time? You can also view a concise outline of the report for a quick overview.</div>
+              </li>
+              <li>
+                <h4><i class="bi bi-3-circle"></i>Personalized Strategies</h4>
+                <div style="margin-left: 23px; margin-bottom: 25px; margin-right: 12px; text-align: justify;">Receive actionable investment strategies that align with your profile. These strategies are designed to help you reach your financial goals with a clear and calculated approach.</div>
+              </li>      
+            </ul>
+            <!-- <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a> -->
+          </div>
+
+          <div class="col-lg-6 about-images" data-aos="fade-up" data-aos-delay="200" >
+            <div class="row gy-4">
+              <div class="col-lg-6">
+                <img src="../static/img/1.jpg" class="img-fluid" >
+              </div>
+              <div class="col-lg-6">
+                <div class="row gy-4">
+                  <div class="col-lg-12" style="margin-top: 3px;">
+                    <img src="../static/img/2.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="col-lg-12">
+                    <img src="../static/img/3.jpg" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- /About Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <div><span>Check Our Services</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="bi bi-pie-chart-fill"></i>
+              </div>
+              <span>
+                <h3>Personalized Financial Reports</h3>
+              </span>
+              <p>Receive AI-powered reports that analyze your financial mindset and provide tailored investment strategies. Each report is designed to help you make informed decisions based on your unique goals.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-bullseye"></i>
+              </div>
+              <span>
+                <h3>Investment Strategy Recommendations</h3>
+              </span>
+              <p>Whether you’re looking to grow your wealth or save for the future, our platform suggests investment strategies suited to your preferences, risk tolerance, and goals.
+
+              </p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-graph-up"></i>
+              </div>
+              <span>
+                <h3>Market Trends & Insights</h3>
+              </span>
+              <p>Stay informed with real-time updates on market performance, including key stats and trends that can impact your investment choices.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-chat-square-text"></i>
+              </div>
+              <span>
+                <h3>Trending Stocks Alerts</h3>
+              </span>
+              <p>
+                Discover trending stocks in the market. Get real-time notifications on stocks making waves and watch the market’s most promising picks.
+                <br> <br>Receive these alerts straight to your WhatsApp number, so you never miss an opportunity.
+                </p>
+              <!-- <a href="service-details.html" class="stretched-link"></a> -->
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-easel"></i>
+              </div>
+              <span>
+                <h3>Quick and Detailed Reports</h3>
+              </span>
+              <p>Choose how you want to view your financial report. Whether you need a deep dive or a quick overview, we provide both detailed and concise versions to fit your schedule.</p>
+              <span class="stretched-link"></span>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-asterisk"></i>
+              </div>
+              <span href="service-details.html" class="stretched-link">
+                <h3>Risk Management Advisory</h3>
+              </span>
+              <p>Help users understand and manage the risk levels in their portfolios. This service analyzes user's investments to ensure alignment with their risk tolerance and offers risk-reducing strategies, such as diversification tips and guidance on low-risk investment options.</p>
+              <!-- <a href="service-details.html" class="stretched-link"></a> -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Features</h2>
+        <div><span>Check Our Features</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5 justify-content-between">
+
+          <div class="col-xl-5" data-aos="zoom-out" data-aos-delay="100">
+            <img src="../static/assets/img//template/eStartup/features.svg" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-xl-6 d-flex">
+            <div class="row align-self-center gy-4">
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>AI-Generated Reports</h3>
+                </div>
+              </div><!-- End Feature Item -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Quick Outline View</h3>
+                </div>
+              </div><!-- End Feature Item -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Real-Time Market Data</h3>
+                </div>
+              </div><!-- End Feature Item -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>WhatsApp Notifications</h3>
+                </div>
+              </div><!-- End Feature Item -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Secure and Confidential</h3>
+                </div>
+              </div><!-- End Feature Item -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Financial Goal Tracking</h3>
+                </div>
+              </div><!-- End Feature Item -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+
+
+      
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section light-background">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="content px-xl-5">
+              <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
+              <p>
+                Got questions? We’ve got answers! Our FAQs section provides clarity on how the platform works, the services we offer, and how you can make the most out of your financial advisory experience. If you can't find what you're looking for, feel free to reach out to us!
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="faq-container">
+              <div class="faq-item faq-active">
+                <h3><span class="num">1.</span> <span>How do I get started with the platform?</span></h3>
+                <div class="faq-content">
+                  <p>Simply fill out a few questions about your financial goals and preferences. This will help us generate a personalized report for you.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">2.</span> <span>How accurate are the investment strategies provided?</span></h3>
+                <div class="faq-content">
+                  <p>Our AI-powered model analyzes your profile and provides strategies based on industry standards and market trends. However, it’s important to remember that investing involves risk, and we recommend cross-referencing with a professional financial advisor.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">3.</span> <span>Will I get updates on the stock market daily?</span></h3>
+                <div class="faq-content">
+                  <p>Yes! You’ll receive daily market updates, including key trends, performance summaries, and stock highlights, ensuring you stay informed.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">4.</span> <span>Can I view my report in different formats?</span></h3>
+                <div class="faq-content">
+                  <p>Absolutely! You can view a full detailed report or a quick outline version for a fast overview of the recommendations.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">5.</span> <span>How do I receive stock updates via WhatsApp?</span></h3>
+                <div class="faq-content">
+                  <p>Once you sign up, simply link your WhatsApp number to your account, and we’ll send you real-time stock trends and market updates directly.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">6.</span> <span>Is my data safe on this platform?</span></h3>
+                <div class="faq-content">
+                  <p>Yes, your data is stored securely with the highest privacy standards. We ensure that your personal and financial information is never shared without your consent.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <div><span style="color: white;">Need Help? Contact Us</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>New Delhi, India</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+91 8929595409</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>zysk@gmail.com</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Diddy Party</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <b>Diddy Party</b>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
+  <script src="../static/vendor/aos/aos.js"></script>
+  <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../static/js/main.js"></script>
+
+</body>
+
+</html>
