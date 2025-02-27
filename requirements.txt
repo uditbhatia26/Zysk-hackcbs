@@ -3,3 +3,7 @@ markdown
 beautifulsoup4
 google-generativeai
 requests
+langchain
+langchain_groq
+langchain_community
+langchain_core
