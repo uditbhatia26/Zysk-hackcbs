@@ -1,6 +1,6 @@
 # Zysk
 
-Zysk is a fintech web platform developed for CodeKshetra, aimed at providing personalized financial insights and investment guidance. Through a structured questionnaire, Zysk assesses a user's financial mindset, generating customized reports and real-time investment suggestions. The platform leverages AI and real-time data integration to offer a modern financial advisory experience.
+Zysk is a fintech web platform developed for HackCBS, aimed at providing personalized financial insights and investment guidance. Through a structured questionnaire, Zysk assesses a user's financial mindset, generating customized reports and real-time investment suggestions. The platform leverages AI and real-time data integration to offer a modern financial advisory experience.
 
 ## Overview
 
